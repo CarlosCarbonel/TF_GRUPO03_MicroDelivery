@@ -4,15 +4,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="169dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logop" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/twTituloPrincpal"
+        android:layout_width="197dp"
+        android:layout_height="46dp"
+        android:layout_alignParentEnd="false"
+        android:layout_toEndOf="@+id/imageView"
+        android:fontFamily="@font/knewave"
+        android:text="Micro Delivery"
+        android:textSize="70px"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <ImageView
+        android:id="@+id/iconousuario"
+        android:layout_width="45dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/caja_loginvector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/iconologueo" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="326dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/caja_login"
+        android:ems="10"
+        android:inputType="text"
+        android:paddingHorizontal="10dp"
+        android:text="Usuario"
+        app:layout_constraintStart_toEndOf="@+id/iconousuario"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="326dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/caja_login"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingHorizontal="10dp"
+        android:text="************"
+        app:layout_constraintStart_toEndOf="@+id/iconopassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <ImageView
+        android:id="@+id/iconopassword"
+        android:layout_width="45dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/caja_loginvector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconousuario"
+        app:srcCompat="@drawable/iconopassword" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:text="INGRESAR"
+        app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <Button
+        android:id="@+id/btncrearusuario"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:text="CREAR USUARIO"
+        android:textSize="30px"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:text="RECUPERAR CONTRASEÑA"
+        android:textSize="30px"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#061D9C"
+        android:text="INGRESA CON FACEBOOK"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncrearusuario"
+        android:drawableLeft="@drawable/ic_facebook1"/>
+
+    <Button
+        android:id="@+id/btngoogle"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:text="INGRESA CON GOOGLE"
+        android:textColor="@color/black"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:strokeColor="@color/black"
+        android:drawableLeft="@drawable/ic_google1"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
