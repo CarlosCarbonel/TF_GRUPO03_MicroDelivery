@@ -12,14 +12,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        crearUsuario()
     }
-/*
-    private fun crearUsuario(){
-        btncrearusuario.setOnClickListener({
-            val intent = Intent(this,)
 
+    private fun crearUsuario(){
+        btncrearusuario = findViewById(R.id.btncrearusuario)
+        btncrearusuario.setOnClickListener({
+            val intent = Intent(this, CrearUsuarioActivity::class.java)
+            startActivity(intent)
         })
     }
-    */
+
 
 }
