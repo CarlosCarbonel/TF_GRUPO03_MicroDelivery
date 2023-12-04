@@ -1,5 +1,6 @@
 package com.upc.tf_grupo03_microdelivery.util
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -62,6 +63,7 @@ class SqliteDB(context: Context):SQLiteOpenHelper(context,NOMBRE_BD, null, VERSI
                 "td_distrito NOT NULL," +
                 "rubrotd_id INTEGER NOT NULL," + "foreign key(rubrotd_id) references rubrotienda(rubrotd_id));"
         db?.execSQL(query)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int){

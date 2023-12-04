@@ -13,37 +13,40 @@ class UsuariosDAO(context: Context) {
 
     fun registrarUsuario(usuario: Usuarios):String{
 
-        var respuesta=""
-
-        val db = sqliteDB.writableDatabase
-        try {
-
-            val valores = ContentValues()
-            valores.put("us_dni", usuario.dni)
-            valores.put("us_nombres", usuario.nombres)
-            valores.put("us_apellidos", usuario.apellidos)
-            valores.put("us_usuario", usuario.usuario)
-            valores.put("us_contrasena", usuario.contrasena)
-            valores.put("us_correo", usuario.correo)
-            valores.put("us_distrito", usuario.distrito)
-            valores.put("us_direccion", usuario.direccion)
-            valores.put("tipous_id", usuario.tipoUsuario)
-
-            var resultado = db.insert("usuarios", null, valores)
-            if (resultado == -1L){
-                respuesta = "Error al registrar"
-            }else{
-                respuesta = "Se registró correctamente"
-            }
-
-        }catch (e:Exception){
-            respuesta = e.message.toString()
-        }finally {
-            db.close()
+        if (existeUsuario(usuario.dni)) {
+            return "Usuario ya registrado"
         }
 
-        return respuesta
+        var respuesta = ""
 
+            val db = sqliteDB.writableDatabase
+            try {
+
+                val valores = ContentValues()
+                valores.put("us_dni", usuario.dni)
+                valores.put("us_nombres", usuario.nombres)
+                valores.put("us_apellidos", usuario.apellidos)
+                valores.put("us_usuario", usuario.usuario)
+                valores.put("us_contrasena", usuario.contrasena)
+                valores.put("us_correo", usuario.correo)
+                valores.put("us_distrito", usuario.distrito)
+                valores.put("us_direccion", usuario.direccion)
+                valores.put("tipous_id", usuario.tipoUsuario)
+
+                var resultado = db.insert("usuarios", null, valores)
+                if (resultado == -1L) {
+                    respuesta = "Error al registrar"
+                } else {
+                    respuesta = "Se registró correctamente"
+                }
+
+            } catch (e: Exception) {
+                respuesta = e.message.toString()
+            } finally {
+                db.close()
+            }
+
+            return respuesta
     }
 
     fun login(username: String, password:String):Usuarios{
@@ -131,5 +134,19 @@ class UsuariosDAO(context: Context) {
         return listaUsuarios
     }
 
+    fun existeUsuario(dni: String): Boolean {
+        val db = sqliteDB.readableDatabase
+        val cursor = db.query(
+            "usuarios", // Nombre de la tabla
+            arrayOf("us_dni"), // Columnas a retornar
+            "us_dni = ?", // Clausula WHERE
+            arrayOf(dni), // Valores para la clausula WHERE
+            null, null, null
+        )
+
+        val existe = cursor.count > 0
+        cursor.close()
+        return existe
+    }
 
 }
