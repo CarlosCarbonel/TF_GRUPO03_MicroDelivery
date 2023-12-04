@@ -20,8 +20,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        asignarReferencias()
         crearUsuario()
         login()
+    }
+
+    private fun asignarReferencias() {
+        //txtmsnombapellidos = findViewById(R.id.txtmsnombapellidos)
     }
 
     private fun crearUsuario(){
@@ -51,9 +56,11 @@ class MainActivity : AppCompatActivity() {
             var usuarioLogueado:Usuarios = usuarioDAO.login(user,password)
 
             if (usuarioLogueado != null){
-                if (usuarioLogueado.dni!=null){
+                if (usuarioLogueado.flgencontrado){
                     val intent = Intent(this, UsuarioActivity::class.java)
+                    intent.putExtra("p_name", usuarioLogueado.nombres + " " + usuarioLogueado.apellidos)
                     startActivity(intent)
+
                 }else{
                     Toast.makeText(this, "No se encontraron resultados con los valores ingresados", Toast.LENGTH_SHORT).show()
                 }

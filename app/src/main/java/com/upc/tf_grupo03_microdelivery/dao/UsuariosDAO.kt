@@ -77,9 +77,12 @@ class UsuariosDAO(context: Context) {
                     usuario.tipoUsuario = tipousaurio
 
                 }while(cursor.moveToNext())
+            }else{
+                usuario.flgencontrado = false
             }
 
         }catch (e:Exception){
+            usuario.flgencontrado = false
             e.printStackTrace()
         }finally {
             db.close()

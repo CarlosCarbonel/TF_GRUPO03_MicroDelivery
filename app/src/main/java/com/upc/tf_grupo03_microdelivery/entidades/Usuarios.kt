@@ -11,5 +11,6 @@ class Usuarios {
     lateinit var correo:String
     lateinit var distrito:String
     lateinit var direccion:String
+    var flgencontrado:Boolean = true
     var tipoUsuario:Int = 0
 }
