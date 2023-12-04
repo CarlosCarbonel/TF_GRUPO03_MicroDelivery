@@ -266,16 +266,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/btntiendas"
+            android:id="@+id/btnbuscarepartidor"
             android:layout_width="160dp"
             android:layout_height="90dp"
             android:layout_marginTop="44dp"
             android:backgroundTint="#13CE66"
             android:fontFamily="@font/kanitb"
             android:paddingHorizontal="30dp"
-            android:text="Tiendas"
+            android:text="Buscar Repartidor"
             android:textColor="#343F4B"
-            android:textSize="45px"
+            android:textSize="42px"
             app:cornerRadius="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.104"
@@ -296,7 +296,7 @@
             app:cornerRadius="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.372"
-            app:layout_constraintStart_toEndOf="@+id/btntiendas"
+            app:layout_constraintStart_toEndOf="@+id/btnbuscarepartidor"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
         <Button
@@ -314,7 +314,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.104"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btntiendas" />
+            app:layout_constraintTop_toBottomOf="@+id/btnbuscarepartidor" />
 
         <Button
             android:id="@+id/btnzonarep"
