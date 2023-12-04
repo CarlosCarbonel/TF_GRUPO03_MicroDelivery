@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="169dp"
+            android:layout_height="164dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.132"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logop" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="197dp"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="false"
+            android:layout_toEndOf="@+id/imageView"
+            android:fontFamily="@font/knewave"
+            android:text="Micro Delivery"
+            android:textSize="70px"
+            android:textColor="#FF47525E"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.938"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.485"
+            android:backgroundTint="@color/white"/>
+
+
+        <View
+
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:backgroundTint="#5A6978"
+            tools:layout_editor_absoluteX="-16dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/caja_misitio"
+            android:fontFamily="@font/kanitb"
+            android:gravity="center"
+            android:text="Mi Sitio"
+            android:textColor="#5A6978"
+            android:textSize="50px"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/fotousuario"
+            android:layout_width="100dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/caja_fotousuario"
+            android:src="@drawable/usuario1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.767"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <ImageButton
+            android:id="@+id/btncamara"
+            android:layout_width="38dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="80dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Foto"
+            android:src="@drawable/camarabtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.864"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <TextView
+            android:id="@+id/txtmsnombapellidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:fontFamily="@font/knewave"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Carlos Carbonel D. "
+            android:textColor="#47525E"
+            android:textSize="50px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.908"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/txtmscorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/kanit"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="ccarboneld@gmail.com "
+            android:textColor="#47525E"
+            android:textSize="30px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.813"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fotousuario" />
+
+        <TextView
+            android:id="@+id/txtmscelular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/kanit"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="995133746 "
+            android:textColor="#47525E"
+            android:textSize="30px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.73"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fotousuario" />
+
+        <Button
+            android:id="@+id/btnactdatos"
+            android:layout_width="163dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="48dp"
+            android:backgroundTint="#47525E"
+            android:fontFamily="@font/kanitb"
+            android:text="Actualizar datos"
+            android:textColor="@color/white"
+            android:textSize="24px"
+            app:cornerRadius="360dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fotousuario" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="227dp"
+            android:layout_height="169dp"
+            android:layout_marginTop="4dp"
+
+            android:layout_marginEnd="44dp"
+            android:background="@drawable/caja_misitioresumen"
+            app:layout_constraintEnd_toStartOf="@+id/fotousuario"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/kanit"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="03 "
+                android:textColor="@color/white"
+                android:textSize="50px"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/kanit"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Contactos "
+                android:textColor="@color/white"
+                android:textSize="32px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/kanit"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="02 "
+                android:textColor="@color/white"
+                android:textSize="50px"
+                app:layout_constraintEnd_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/kanit"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Tiendas creadas "
+                android:textColor="@color/white"
+                android:textSize="32px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/kanit"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="00 "
+                android:textColor="@color/white"
+                android:textSize="50px"
+                app:layout_constraintEnd_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/kanit"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Recomendaciones "
+                android:textColor="@color/white"
+                android:textSize="32px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btntiendas"
+            android:layout_width="160dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="44dp"
+            android:backgroundTint="#13CE66"
+            android:fontFamily="@font/kanitb"
+            android:paddingHorizontal="30dp"
+            android:text="Tiendas"
+            android:textColor="#343F4B"
+            android:textSize="45px"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.104"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <Button
+            android:id="@+id/btncontactos"
+            android:layout_width="160dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="44dp"
+            android:paddingHorizontal="30dp"
+            android:fontFamily="@font/kanitb"
+            android:text="Contactos"
+            android:textSize="45px"
+            android:textColor="#343F4B"
+            android:backgroundTint="#FFCD0F"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.372"
+            app:layout_constraintStart_toEndOf="@+id/btntiendas"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <Button
+            android:id="@+id/btnprodenviados"
+            android:layout_width="160dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="#DE3134"
+            android:fontFamily="@font/kanitb"
+            android:paddingHorizontal="30dp"
+            android:text="Productos Enviados"
+            android:textColor="@color/white"
+            android:textSize="45px"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.104"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btntiendas" />
+
+        <Button
+            android:id="@+id/btnzonarep"
+            android:layout_width="160dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="#976DD0"
+            android:fontFamily="@font/kanitb"
+            android:paddingHorizontal="30dp"
+            android:text="Zona Repartidor"
+            android:textColor="@color/white"
+            android:textSize="45px"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintStart_toEndOf="@+id/btnprodenviados"
+            app:layout_constraintTop_toBottomOf="@+id/btncontactos" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

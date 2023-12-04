@@ -45,7 +45,7 @@
         app:srcCompat="@drawable/iconologueo" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/txtusu"
         android:layout_width="326dp"
         android:layout_height="52dp"
         android:layout_marginTop="24dp"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txtpwd"
         android:layout_width="326dp"
         android:layout_height="52dp"
         android:layout_marginTop="8dp"
@@ -68,7 +68,7 @@
         android:paddingHorizontal="10dp"
         android:hint="Ingrese Contraseña"
         app:layout_constraintStart_toEndOf="@+id/iconopassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtusu" />
 
     <ImageView
         android:id="@+id/iconopassword"
@@ -81,7 +81,7 @@
         app:srcCompat="@drawable/iconopassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btningresar"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_marginTop="10dp"
@@ -89,7 +89,7 @@
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/txtpwd" />
 
     <Button
         android:id="@+id/btncrearusuario"
@@ -98,20 +98,20 @@
         android:text="CREAR USUARIO"
         android:textSize="30px"
         app:cornerRadius="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/btnrecuperarpwd"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btningresar" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnrecuperarpwd"
         android:layout_width="170dp"
         android:layout_height="48dp"
         android:text="RECUPERAR CONTRASEÑA"
         android:textSize="30px"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btningresar" />
 
     <Button
         android:id="@+id/button4"

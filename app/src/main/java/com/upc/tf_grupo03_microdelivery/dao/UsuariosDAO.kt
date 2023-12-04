@@ -2,6 +2,7 @@ package com.upc.tf_grupo03_microdelivery.dao
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import com.upc.tf_grupo03_microdelivery.entidades.Usuarios
 import com.upc.tf_grupo03_microdelivery.util.SqliteDB
 
@@ -45,6 +46,46 @@ class UsuariosDAO(context: Context) {
 
     }
 
+    fun login(username: String, password:String):Usuarios{
+        var usuario = Usuarios()
+        val db = sqliteDB.readableDatabase
+        val query = "SELECT * FROM usuarios where us_usuario='$username' and us_contrasena='$password'"
+
+        val cursor: Cursor
+
+        try {
+            cursor = db.rawQuery(query,null)
+            if (cursor.count>0){
+                cursor.moveToFirst()
+                do{
+                    val id:Int = cursor.getInt(cursor.getColumnIndexOrThrow("us_id"))
+                    val dni:String = cursor.getString(cursor.getColumnIndexOrThrow("us_dni"))
+                    val nombres:String = cursor.getString(cursor.getColumnIndexOrThrow("us_nombres"))
+                    val apellidos:String = cursor.getString(cursor.getColumnIndexOrThrow("us_apellidos"))
+                    val correo:String = cursor.getString(cursor.getColumnIndexOrThrow("us_correo"))
+                    val distrito:String = cursor.getString(cursor.getColumnIndexOrThrow("us_distrito"))
+                    val direccion:String = cursor.getString(cursor.getColumnIndexOrThrow("us_direccion"))
+                    val tipousaurio:Int = cursor.getInt(cursor.getColumnIndexOrThrow("tipous_id"))
+
+                    usuario.id=id
+                    usuario.dni=dni
+                    usuario.nombres=nombres
+                    usuario.apellidos=apellidos
+                    usuario.correo=correo
+                    usuario.distrito = distrito
+                    usuario.direccion=direccion
+                    usuario.tipoUsuario = tipousaurio
+
+                }while(cursor.moveToNext())
+            }
+
+        }catch (e:Exception){
+            e.printStackTrace()
+        }finally {
+            db.close()
+        }
+        return usuario
+    }
 
 
 }
