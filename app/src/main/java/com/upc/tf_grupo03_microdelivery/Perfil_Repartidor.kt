@@ -1,7 +1,14 @@
 package com.upc.tf_grupo03_microdelivery
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.PopupWindow
 import android.widget.TextView
 import com.upc.tf_grupo03_microdelivery.dao.UsuariosDAO
 
@@ -11,22 +18,46 @@ class Perfil_Repartidor : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_repartidor)
-        usuariosDAO = UsuariosDAO(this)
 
-        val usuarioId = intent.getIntExtra("EXTRA_USUARIO_ID", -1)
+        val miBoton = findViewById<Button>(R.id.btnpopupllamada)
+        miBoton.setOnClickListener {
+            mostrarPopup(it)
 
-        val usuario = usuariosDAO.obtenerUsuarioPorId(usuarioId)
+            usuariosDAO = UsuariosDAO(this)
 
-        if (usuario != null) {
+            val usuarioId = intent.getIntExtra("EXTRA_USUARIO_ID", -1)
 
-            findViewById<TextView>(R.id.nombreRepartidor).text = usuario.nombres
-            findViewById<TextView>(R.id.apellidoRepartidor).text = usuario.apellidos
-            findViewById<TextView>(R.id.direccionRepartidor).text = usuario.direccion
-            findViewById<TextView>(R.id.distritoRepartidor).text = usuario.distrito
+            val usuario = usuariosDAO.obtenerUsuarioPorId(usuarioId)
 
-        } else {
-            // Manejar el caso en que el usuario no se encuentra
+            if (usuario != null) {
+
+                findViewById<TextView>(R.id.nombreRepartidor).text = usuario.nombres
+                findViewById<TextView>(R.id.apellidoRepartidor).text = usuario.apellidos
+                findViewById<TextView>(R.id.direccionRepartidor).text = usuario.direccion
+                findViewById<TextView>(R.id.distritoRepartidor).text = usuario.distrito
+
+            } else {
+                // Manejar el caso en que el usuario no se encuentra
+            }
         }
+    }
+
+    private fun mostrarPopup(anchorView: View) {
+        val layoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val popupView = layoutInflater.inflate(R.layout.activity_popupllamada, null)
+
+        val popupWindow = PopupWindow(
+            popupView,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+
+        // Configura si el popup se cierra al tocar fuera de él
+        popupWindow.isFocusable = true
+        popupWindow.isOutsideTouchable = true
+
+        // Muestra el PopupWindow
+        popupWindow.showAtLocation(anchorView, Gravity.CENTER, 0, 0)
     }
 
 }
