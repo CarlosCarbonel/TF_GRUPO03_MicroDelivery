@@ -4,14 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.upc.tf_grupo03_microdelivery.Adaptor
+import com.upc.tf_grupo03_microdelivery.OnItemClickListener
 import com.upc.tf_grupo03_microdelivery.R
 import com.upc.tf_grupo03_microdelivery.dao.UsuariosDAO
+import com.upc.tf_grupo03_microdelivery.entidades.Usuarios
 
-class ListaRepartidor : AppCompatActivity() {
+class ListaRepartidor : AppCompatActivity(), OnItemClickListener {
 
     private lateinit var rvUsuarios: RecyclerView
     private lateinit var usuariosDAO: UsuariosDAO
@@ -27,8 +30,13 @@ class ListaRepartidor : AppCompatActivity() {
         usuariosDAO = UsuariosDAO(this)
         rvUsuarios=findViewById(R.id.rvUsuarios)
         rvUsuarios.layoutManager= LinearLayoutManager(this)
-        adaptador= Adaptor()
+        adaptador= Adaptor(this)
         rvUsuarios.adapter=adaptador
+    }
+    override fun onItemClicked(usuario: Usuarios) {
+        // Aquí manejas el clic en un ítem del RecyclerView.
+        // Por ejemplo, puedes mostrar un Toast o iniciar una nueva actividad
+        Toast.makeText(this, "Clic en: ${usuario.nombres}", Toast.LENGTH_SHORT).show()
     }
     private fun mostrarUsuarios(){
         val listaUsuarios = usuariosDAO.cargarUsuarios()
