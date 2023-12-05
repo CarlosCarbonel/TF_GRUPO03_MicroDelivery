@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@android:color/white">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:background="@drawable/caja_popup"
+    tools:context=".popupllamada">
 
-    <TextView
-        android:id="@+id/popup_text"
+
+    <ImageButton
+        android:id="@+id/btnllamada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Este es el contenido del Popup"
-        android:textSize="16sp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/llamada"
+        android:layout_marginLeft="60dp"/>
 
-    <!-- Añadir más vistas aquí si es necesario -->
+    <ImageButton
+        android:id="@+id/btnmensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnllamada"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mensaje"
+        android:layout_marginRight="20dp"/>"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
