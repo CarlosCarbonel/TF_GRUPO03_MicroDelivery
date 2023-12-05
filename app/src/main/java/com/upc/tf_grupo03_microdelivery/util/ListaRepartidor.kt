@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.upc.tf_grupo03_microdelivery.Adaptor
 import com.upc.tf_grupo03_microdelivery.OnItemClickListener
+import com.upc.tf_grupo03_microdelivery.Perfil_Repartidor
 import com.upc.tf_grupo03_microdelivery.R
 import com.upc.tf_grupo03_microdelivery.dao.UsuariosDAO
 import com.upc.tf_grupo03_microdelivery.entidades.Usuarios
@@ -34,9 +35,13 @@ class ListaRepartidor : AppCompatActivity(), OnItemClickListener {
         rvUsuarios.adapter=adaptador
     }
     override fun onItemClicked(usuario: Usuarios) {
+        val intent = Intent(this, Perfil_Repartidor::class.java)
+        intent.putExtra("EXTRA_USUARIO_ID", usuario.id)
+        // Puedes pasar otros datos del usuario si es necesario
+        startActivity(intent)
         // Aquí manejas el clic en un ítem del RecyclerView.
         // Por ejemplo, puedes mostrar un Toast o iniciar una nueva actividad
-        Toast.makeText(this, "Clic en: ${usuario.nombres}", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Clic en: ${usuario.nombres}", Toast.LENGTH_SHORT).show()
     }
     private fun mostrarUsuarios(){
         val listaUsuarios = usuariosDAO.cargarUsuarios()
