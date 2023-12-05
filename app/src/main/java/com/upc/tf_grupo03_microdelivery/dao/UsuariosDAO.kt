@@ -90,5 +90,46 @@ class UsuariosDAO(context: Context) {
         return usuario
     }
 
+    fun cargarUsuarios():ArrayList<Usuarios>{
+        val listaUsuarios:ArrayList<Usuarios> = ArrayList()
+        val query = "SELECT * FROM usuarios"
+        val db= sqliteDB.readableDatabase
+        val cursor:Cursor
+        try {
+            cursor = db.rawQuery(query, null)
+            if (cursor.count>0){
+                cursor.moveToFirst()
+                do{
+                    val id:Int = cursor.getInt(cursor.getColumnIndexOrThrow("us_id"))
+                    val dni:String = cursor.getString(cursor.getColumnIndexOrThrow("us_dni"))
+                    val nombres:String = cursor.getString(cursor.getColumnIndexOrThrow("us_nombres"))
+                    val apellidos:String = cursor.getString(cursor.getColumnIndexOrThrow("us_apellidos"))
+                    val correo:String = cursor.getString(cursor.getColumnIndexOrThrow("us_correo"))
+                    val distrito:String = cursor.getString(cursor.getColumnIndexOrThrow("us_distrito"))
+                    val direccion:String = cursor.getString(cursor.getColumnIndexOrThrow("us_direccion"))
+                    val tipousaurio:Int = cursor.getInt(cursor.getColumnIndexOrThrow("tipous_id"))
+
+                    var usuario = Usuarios()
+
+                    usuario.id=id
+                    usuario.dni=dni
+                    usuario.nombres=nombres
+                    usuario.apellidos=apellidos
+                    usuario.correo=correo
+                    usuario.distrito = distrito
+                    usuario.direccion=direccion
+                    usuario.tipoUsuario = tipousaurio
+
+                    listaUsuarios.add(usuario)
+                }while (cursor.moveToNext())
+            }
+        }catch (e:Exception){
+
+        }finally {
+            db.close()
+        }
+        return listaUsuarios
+    }
+
 
 }
