@@ -19,10 +19,6 @@ class Perfil_Repartidor : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_repartidor)
 
-        val miBoton = findViewById<Button>(R.id.btnpopupllamada)
-        miBoton.setOnClickListener {
-            mostrarPopup(it)
-
             usuariosDAO = UsuariosDAO(this)
 
             val usuarioId = intent.getIntExtra("EXTRA_USUARIO_ID", -1)
@@ -39,6 +35,9 @@ class Perfil_Repartidor : AppCompatActivity() {
             } else {
                 // Manejar el caso en que el usuario no se encuentra
             }
+        val miBoton = findViewById<Button>(R.id.btnpopupllamada)
+        miBoton.setOnClickListener {
+            mostrarPopup(it)
         }
     }
 

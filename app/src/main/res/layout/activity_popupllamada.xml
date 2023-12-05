@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center"
-    android:layout_width="300dp"
-    android:layout_height="200dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@drawable/caja_popup"
     tools:context=".popupllamada">
 
@@ -13,11 +13,13 @@
         android:id="@+id/btnllamada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descripcion_llamada"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/llamada"
-        android:layout_marginLeft="60dp"/>
+        app:srcCompat="@drawable/llamada" />
 
     <ImageButton
         android:id="@+id/btnmensaje"
@@ -28,6 +30,8 @@
         app:layout_constraintStart_toEndOf="@+id/btnllamada"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mensaje"
-        android:layout_marginRight="20dp"/>"/>
+        android:layout_marginRight="20dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descripcion_mensaje"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
