@@ -104,7 +104,7 @@
         app:srcCompat="@drawable/repartidor3" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProductos"
+        android:id="@+id/rvUsuarios"
         android:layout_width="409dp"
         android:layout_height="337dp"
         android:background="#13CE66"
@@ -119,7 +119,7 @@
         android:id="@+id/imageView7"
         android:layout_width="314dp"
         android:layout_height="172dp"
-        app:layout_constraintBottom_toTopOf="@+id/rvProductos"
+        app:layout_constraintBottom_toTopOf="@+id/rvUsuarios"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.0"
