@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -26,17 +27,63 @@ class CrearUsuarioActivity : AppCompatActivity() {
     private lateinit var eddireccion: EditText
     private lateinit var edcorreo: EditText
     private lateinit var btncusuario: Button
+    private lateinit var txtTituloForm: TextView
 
     private lateinit var usuarioDAO: UsuariosDAO
     private lateinit var tipoUsuarioDAO: TipoUsuarioDAO
+    private var id:Int = 0
+
+    private var modificar:Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_usuario)
         cargarTipoUsuario()
+        verificaSiActualiza()
         asignarReferencias()
     }
 
+    private fun verificaSiActualiza() {
+        if (intent.hasExtra("p_id")){
+            modificar = true
+
+            var numero:String? = ""
+            numero = intent.getStringExtra("p_id")
+
+            id = Integer.parseInt(numero)
+
+            txtTituloForm = findViewById(R.id.txtTituloForm)
+            btncusuario = findViewById(R.id.btncusuario)
+
+            txtTituloForm.setText("Editar Usuario")
+            btncusuario.setText("Guardar cambios")
+
+            val usuariosDAOV = UsuariosDAO(this)
+            val objPersona = usuariosDAOV.obtenerUsuarioPorId(id)
+            if (objPersona!=null){
+                edcuenta = findViewById(R.id.edcuenta)
+                edpass = findViewById(R.id.edpass)
+                ednombres = findViewById(R.id.ednombres)
+                edapellidos = findViewById(R.id.edapellidos)
+                eddni = findViewById(R.id.eddni)
+                eddistrito = findViewById(R.id.eddistrito)
+                eddireccion = findViewById(R.id.eddireccion)
+                edcorreo  = findViewById(R.id.edcorreo)
+
+                edcuenta.setText(objPersona.usuario)
+                edpass.setText(objPersona.contrasena)
+                ednombres.setText(objPersona.nombres)
+                edapellidos.setText(objPersona.apellidos)
+                eddni.setText(objPersona.dni)
+                eddistrito.setText(objPersona.distrito)
+                eddireccion.setText(objPersona.direccion)
+                edcorreo.setText(objPersona.correo)
+            }
+
+        }
+    }
+
     private fun asignarReferencias(){
+
         edcuenta = findViewById(R.id.edcuenta)
         edpass = findViewById(R.id.edpass)
         ednombres = findViewById(R.id.ednombres)
@@ -84,8 +131,12 @@ class CrearUsuarioActivity : AppCompatActivity() {
             val usuariosDAO = UsuariosDAO(this)
             var mensaje = ""
 
-            mensaje = usuariosDAO.registrarUsuario(objUsuario)
-
+            if (modificar == false){
+                mensaje = usuariosDAO.registrarUsuario(objUsuario)
+            }else{
+                objUsuario.id = id
+                mensaje = usuariosDAO.actualizarUsuario(objUsuario)
+            }
 
             mostrarMensaje(mensaje)
             limpiarCajas()

@@ -55,7 +55,7 @@
             tools:layout_editor_absoluteX="-16dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtTituloForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -79,7 +79,7 @@
             android:src="@drawable/usuario1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloForm"
             android:background="@drawable/caja_fotousuario"/>
 
         <ImageButton

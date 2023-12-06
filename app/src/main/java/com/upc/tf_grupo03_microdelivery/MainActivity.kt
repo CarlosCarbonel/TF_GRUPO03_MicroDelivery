@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this, UsuarioActivity::class.java)
                     intent.putExtra("p_name", usuarioLogueado.nombres + " " + usuarioLogueado.apellidos)
                     intent.putExtra("p_email", usuarioLogueado.correo)
+                    intent.putExtra("p_id", usuarioLogueado.id)
                     startActivity(intent)
 
                 }else{

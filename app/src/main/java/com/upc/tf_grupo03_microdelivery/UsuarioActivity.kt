@@ -15,6 +15,8 @@ class UsuarioActivity : AppCompatActivity() {
     private lateinit var btnbuscarepartidor: Button
     private lateinit var btncontactos: Button
     private lateinit var txtmscorreo: TextView
+    private lateinit var txtmscelular: TextView
+    private lateinit var btnactdatos: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +24,28 @@ class UsuarioActivity : AppCompatActivity() {
         verificarAcceso()
         buscarRepartidor()
         buscarContacto()
+        actualizarDatosUsuario()
+    }
+
+    private fun actualizarDatosUsuario() {
+        btnactdatos = findViewById(R.id.btnactdatos)
+        txtmscelular = findViewById(R.id.txtmscelular)
+        btnactdatos.setOnClickListener({
+            val intent = Intent(this,CrearUsuarioActivity::class.java)
+            intent.putExtra("p_id", txtmscelular.text)
+            startActivity(intent)
+        })
     }
 
     private fun verificarAcceso() {
         if (intent.hasExtra("p_name")) {
             txtmsnombapellidos = findViewById(R.id.txtmsnombapellidos)
             txtmscorreo = findViewById(R.id.txtmscorreo)
+            txtmscelular = findViewById(R.id.txtmscelular)
+
             txtmsnombapellidos.setText(intent.getStringExtra("p_name"))
             txtmscorreo.setText(intent.getStringExtra("p_email"))
+            txtmscelular.setText(intent.getIntExtra("p_id",0).toString())
         }
     }
 

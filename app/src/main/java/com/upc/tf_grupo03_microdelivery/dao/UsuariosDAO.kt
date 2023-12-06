@@ -198,11 +198,49 @@ class UsuariosDAO(context: Context) {
                 val tipoUsuarioIndex = cursor.getColumnIndex("us_tipoUsuario")
                 if (tipoUsuarioIndex != -1) this.tipoUsuario = cursor.getInt(tipoUsuarioIndex)
                 // Continuar con más campos si es necesario
+
+                val dniIndex = cursor.getColumnIndex("us_dni")
+                if (dniIndex != -1) this.dni = cursor.getString(dniIndex)
+
             }
         }
 
         cursor.close()
         return usuario
+    }
+
+    fun actualizarUsuario(persona: Usuarios):String{
+
+        var respuesta=""
+
+        val db = sqliteDB.writableDatabase
+        try {
+
+            val valores = ContentValues()
+            valores.put("us_dni", persona.dni)
+            valores.put("us_nombres", persona.nombres)
+            valores.put("us_apellidos", persona.apellidos)
+            valores.put("us_usuario", persona.usuario)
+            valores.put("us_contrasena", persona.contrasena)
+            valores.put("us_correo", persona.correo)
+            valores.put("us_distrito", persona.distrito)
+            valores.put("us_direccion", persona.direccion)
+
+            var resultado = db.update("usuarios", valores, "us_id="+persona.id,null)
+            if (resultado == -1){
+                respuesta = "Error al modificar"
+            }else{
+                respuesta = "Se actualizó correctamente"
+            }
+
+        }catch (e:Exception){
+            respuesta = e.message.toString()
+        }finally {
+            db.close()
+        }
+
+        return respuesta
+
     }
 
 }
