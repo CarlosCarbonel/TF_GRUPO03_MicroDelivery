@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.upc.tf_grupo03_microdelivery.MainActivity
 import com.upc.tf_grupo03_microdelivery.R
+import com.upc.tf_grupo03_microdelivery.dao.UsuariosDAO
 
 class RecuperarContrasena : AppCompatActivity() {
 
@@ -19,13 +20,14 @@ class RecuperarContrasena : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recuperar_contrasena)
         asignarReferencias()
+
     }
 
     private fun asignarReferencias(){
         txtCorreo = findViewById(R.id.txtCorreo)
         btnEnviar = findViewById(R.id.btnEnviar)
 
-        btnEnviar.setOnClickListener({enviarCorreo()})
+        btnEnviar.setOnClickListener({recuperarContrasena()})
     }
 
     private fun enviarCorreo(){
@@ -47,5 +49,17 @@ class RecuperarContrasena : AppCompatActivity() {
             startActivity(intent)
         })
         ventana.create().show()
+    }
+    private fun recuperarContrasena() {
+        val correo = txtCorreo.text.toString()
+        val contrasena = UsuariosDAO(this).obtenerContrasenaPorCorreo(correo)
+
+        if (contrasena != null) {
+            // Mostrar la contraseña al usuario o enviarla por correo
+            Toast.makeText(this, "Tu contraseña es: $contrasena", Toast.LENGTH_LONG).show()
+        } else {
+            // Manejar el caso en que no se encuentre el correo
+            Toast.makeText(this, "Correo no encontrado", Toast.LENGTH_SHORT).show()
+        }
     }
 }

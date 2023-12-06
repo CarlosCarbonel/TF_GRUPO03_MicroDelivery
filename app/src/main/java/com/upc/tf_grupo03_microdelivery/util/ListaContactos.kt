@@ -34,7 +34,7 @@ class ListaContactos : AppCompatActivity(), Adaptorc.OnItemClickListener {
     }
     override fun onItemClicked(contacto: Contactos) {
         val intent = Intent(this, Perfil_Repartidor::class.java)
-        intent.putExtra("EXTRA_USUARIO_ID", contacto.cid)
+        intent.putExtra("EXTRA_USUARIO_ID_C", contacto.usuarioId)
         // Puedes pasar otros datos del usuario si es necesario
         startActivity(intent)
         // Aquí manejas el clic en un ítem del RecyclerView.

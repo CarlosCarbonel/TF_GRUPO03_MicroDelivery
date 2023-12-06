@@ -29,7 +29,7 @@ class MiApp : Application() {
                 apellidos = "Carbonel Del Castillo"
                 usuario = "CarlosCD"
                 contrasena = "prueba1"
-                correo = "carlosc@gmail.com"
+                correo = "carloscd@gmail.com"
                 distrito = "La Victoria"
                 direccion = "Jr. Los Corales 128"
                 tipoUsuario= 1

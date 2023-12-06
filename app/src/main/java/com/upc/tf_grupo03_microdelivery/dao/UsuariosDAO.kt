@@ -161,7 +161,7 @@ class UsuariosDAO(context: Context) {
     fun obtenerUsuarioPorId(id: Int): Usuarios? {
         val db = sqliteDB.readableDatabase
         val cursor = db.query(
-            "Usuarios",
+            "usuarios",
             null,
             "us_id = ?",
             arrayOf(id.toString()),
@@ -241,6 +241,25 @@ class UsuariosDAO(context: Context) {
 
         return respuesta
 
+    }
+
+    fun obtenerContrasenaPorCorreo(correo: String): String? {
+        val db = sqliteDB.readableDatabase
+        val cursor = db.query(
+            "usuarios", // Nombre de la tabla
+            arrayOf("us_contrasena"), // Columnas que quieres obtener
+            "us_correo = ?", // Criterios de selección
+            arrayOf(correo), // Valores para los criterios de selección
+            null, null, null
+        )
+
+        var contrasena: String? = null
+        if (cursor.moveToFirst()) {
+            contrasena = cursor.getString(cursor.getColumnIndexOrThrow("us_contrasena"))
+        }
+        cursor.close()
+        db.close()
+        return contrasena
     }
 
 }
