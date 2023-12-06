@@ -21,14 +21,15 @@
         android:id="@+id/Tipo"
         android:layout_width="98dp"
         android:layout_height="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Repartidor"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
     <View
         android:id="@+id/divider5"
         android:layout_width="125dp"
@@ -69,31 +70,55 @@
         android:layout_marginEnd="52dp"
         android:text="Recomendaciones"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/distritoRepartidor" />
 
     <TextView
         android:id="@+id/nombreRepartidor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Juan Perez Galvez"
+        android:layout_marginTop="8dp"
+        android:text="Nombres"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="@+id/imageView10"
         app:layout_constraintTop_toBottomOf="@+id/imageView12" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/apellidoRepartidor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="995133175"
-        app:layout_constraintEnd_toEndOf="@+id/textView16"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        android:layout_marginTop="4dp"
+        android:text="Apellidos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/nombreRepartidor"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/nombreRepartidor"
+        app:layout_constraintTop_toBottomOf="@+id/nombreRepartidor" />
+
+    <TextView
+        android:id="@+id/direccionRepartidor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Dirección"
+        app:layout_constraintEnd_toEndOf="@+id/imageView10"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/nombreRepartidor" />
+
+    <TextView
+        android:id="@+id/distritoRepartidor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Distrito"
+        app:layout_constraintEnd_toEndOf="@+id/direccionRepartidor"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/direccionRepartidor"
+        app:layout_constraintTop_toBottomOf="@+id/direccionRepartidor" />
 
     <TextView
         android:id="@+id/textView22"
@@ -104,7 +129,7 @@
         android:text="70"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/distritoRepartidor" />
 
     <TextView
         android:id="@+id/textView19"
@@ -114,18 +139,9 @@
         android:layout_marginTop="12dp"
         android:text="Servicios"
         app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/distritoRepartidor" />
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Jr. Los Corales 128 Urb Los Corales-  La Victoria Lima"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/nombreRepartidor" />
+
 
     <ImageView
         android:id="@+id/imageView12"
@@ -147,7 +163,7 @@
         android:text="78"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/distritoRepartidor" />
 
     <ImageView
         android:id="@+id/imageView18"
@@ -160,7 +176,7 @@
         app:srcCompat="@drawable/recomendaciones" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnpopupllamada"
         android:layout_width="128dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"

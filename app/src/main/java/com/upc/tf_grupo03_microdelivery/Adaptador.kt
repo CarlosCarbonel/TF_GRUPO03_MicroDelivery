@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.upc.tf_grupo03_microdelivery.entidades.Usuarios
 
 
-class Adaptor:RecyclerView.Adapter<Adaptor.MiViewHolder>(){
+class Adaptor (private val listener:OnItemClickListener):RecyclerView.Adapter<Adaptor.MiViewHolder>(){
 
     private var listaUsuarios:ArrayList<Usuarios> = ArrayList()
 
@@ -20,23 +20,26 @@ class Adaptor:RecyclerView.Adapter<Adaptor.MiViewHolder>(){
     }
 
 
-    class MiViewHolder(var view:View):RecyclerView.ViewHolder(view){
+    class MiViewHolder(var view:View, val listener: OnItemClickListener):RecyclerView.ViewHolder(view){
         private var fNombres= view.findViewById<TextView>(R.id.filanombres)
         private var fApellidos= view.findViewById<TextView>(R.id.filaapellidos)
-
 
         fun bindView(usuario:Usuarios) {
             fNombres.text=usuario.nombres
             fApellidos.text=usuario.apellidos
 
+            view.setOnClickListener{
+                listener.onItemClicked(usuario)
+            }
+
         }
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= Adaptor.MiViewHolder (
-        LayoutInflater.from(parent.context).inflate(R.layout.fila_repartidor,parent,false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MiViewHolder(
+        LayoutInflater.from(parent.context).inflate(R.layout.fila_repartidor, parent, false),
+        listener
     )
-
     override fun onBindViewHolder(holder: Adaptor.MiViewHolder, position: Int) {
         val personaItem=listaUsuarios[position]
         holder.bindView(personaItem)
@@ -47,6 +50,7 @@ class Adaptor:RecyclerView.Adapter<Adaptor.MiViewHolder>(){
     }
 
 
-
-
+}
+interface OnItemClickListener {
+    fun onItemClicked(usuario: Usuarios)
 }
