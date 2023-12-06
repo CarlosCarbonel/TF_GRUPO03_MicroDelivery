@@ -14,6 +14,9 @@
         android:theme="@style/Theme.TF_GRUPO03_MicroDelivery"
         tools:targetApi="31">
         <activity
+            android:name=".lista_contactos"
+            android:exported="false" />
+        <activity
             android:name=".popupllamada"
             android:exported="false" />
         <activity
@@ -42,7 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".Perfil_Repartidor"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
