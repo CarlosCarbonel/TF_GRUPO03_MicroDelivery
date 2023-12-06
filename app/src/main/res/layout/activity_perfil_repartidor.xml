@@ -178,15 +178,32 @@
 
     <Button
         android:id="@+id/btnpopupllamada"
-        android:layout_width="128dp"
+        android:layout_width="145dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:background="#131212"
+        android:fontFamily="@font/kanit"
         android:text="Solicitar Envio"
         android:textColor="#F4F0F0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView18" />
+
+    <Button
+        android:id="@+id/btnagregarcontacto"
+        android:layout_width="145dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="#131212"
+        android:fontFamily="@font/kanit"
+        android:text="Agregar Contacto"
+        android:textColor="#F4F0F0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintStart_toEndOf="@+id/btnpopupllamada"
+        app:layout_constraintTop_toBottomOf="@+id/imageView18"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imglogo" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvUsuarios"
+        android:id="@+id/rvContactos"
         android:layout_width="match_parent"
         android:layout_height="480dp"
         android:background="#FFCD0F"
