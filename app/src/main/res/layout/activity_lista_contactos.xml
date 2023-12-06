@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imglogo"
         android:layout_width="169dp"
         android:layout_height="164dp"
         android:layout_marginTop="16dp"
@@ -19,17 +19,17 @@
         app:srcCompat="@drawable/logop" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtnombrelogo"
         android:layout_width="197dp"
         android:layout_height="46dp"
         android:layout_alignParentEnd="false"
-        android:layout_toEndOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imglogo"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/knewave"
         android:text="Micro Delivery"
         android:textColor="#FF47525E"
         android:textSize="70px"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imglogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.855"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
 
 
 
@@ -58,7 +58,7 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
 
     <TextView
         android:id="@+id/textView"
@@ -70,14 +70,14 @@
         android:shadowColor="#FFCD0F"
         android:text="CONTACTOS"
         android:fontFamily="@font/kanit"
-        android:textColor="@color/white"
+        android:textColor="#343F4B"
         android:textColorHighlight="#FFCD0F"
         android:textColorLink="#FFCD0F"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvUsuarios"
