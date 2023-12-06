@@ -13,7 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.upc.tf_grupo03_microdelivery.dao.ContactosDAO
 import com.upc.tf_grupo03_microdelivery.dao.UsuariosDAO
-import com.upc.tf_grupo03_microdelivery.entidades.Contacto
+import com.upc.tf_grupo03_microdelivery.entidades.Contactos
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -21,14 +21,14 @@ import kotlinx.coroutines.launch
 class Perfil_Repartidor : AppCompatActivity() {
     private lateinit var usuariosDAO: UsuariosDAO
     private lateinit var contactosDAO: ContactosDAO
-    private val usuarioId: Int = 0
+    private var usuarioId: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_repartidor)
 
             usuariosDAO = UsuariosDAO(this)
 
-            val usuarioId = intent.getIntExtra("EXTRA_USUARIO_ID", -1)
+            usuarioId = intent.getIntExtra("EXTRA_USUARIO_ID", -1)
 
             val usuario = usuariosDAO.obtenerUsuarioPorId(usuarioId)
 
@@ -76,7 +76,7 @@ class Perfil_Repartidor : AppCompatActivity() {
     private fun agregarContacto() {
         val usuario = usuariosDAO.obtenerUsuarioPorId(usuarioId)
         usuario?.let {
-            val nuevoContacto = Contacto().apply {
+            val nuevoContacto = Contactos().apply {
             usuarioId = it.id
             cdni = it.dni
             cnombres = it.nombres

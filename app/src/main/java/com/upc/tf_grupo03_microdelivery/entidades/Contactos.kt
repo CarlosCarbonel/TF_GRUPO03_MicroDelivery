@@ -1,6 +1,6 @@
 package com.upc.tf_grupo03_microdelivery.entidades
 
-class Contacto {
+class Contactos {
     var cid:Int = 0
     var usuarioId: Int=0
     lateinit var cdni:String

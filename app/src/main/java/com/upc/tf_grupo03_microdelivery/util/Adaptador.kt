@@ -1,18 +1,19 @@
-package com.upc.tf_grupo03_microdelivery
+package com.upc.tf_grupo03_microdelivery.util
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RemoteViews.RemoteCollectionItems
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.upc.tf_grupo03_microdelivery.R
+
 import com.upc.tf_grupo03_microdelivery.entidades.Usuarios
 
 
-class Adaptor (private val listener:OnItemClickListener):RecyclerView.Adapter<Adaptor.MiViewHolder>(){
+class Adaptor (private val listener: OnItemClickListener):RecyclerView.Adapter<Adaptor.MiViewHolder>(){
 
     private var listaUsuarios:ArrayList<Usuarios> = ArrayList()
+
 
     fun agregarItems(items:ArrayList<Usuarios>){
         this.listaUsuarios=items
@@ -39,7 +40,7 @@ class Adaptor (private val listener:OnItemClickListener):RecyclerView.Adapter<Ad
         LayoutInflater.from(parent.context).inflate(R.layout.fila_repartidor, parent, false),
         listener
     )
-    override fun onBindViewHolder(holder: Adaptor.MiViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MiViewHolder, position: Int) {
         val personaItem=listaUsuarios[position]
         holder.bindView(personaItem)
     }
@@ -48,8 +49,8 @@ class Adaptor (private val listener:OnItemClickListener):RecyclerView.Adapter<Ad
         return listaUsuarios.size
     }
 
+    interface OnItemClickListener {
+        fun onItemClicked(usuario: Usuarios)
+    }
+}
 
-}
-interface OnItemClickListener {
-    fun onItemClicked(usuario: Usuarios)
-}

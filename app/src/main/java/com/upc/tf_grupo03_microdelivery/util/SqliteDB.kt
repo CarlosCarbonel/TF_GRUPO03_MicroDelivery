@@ -34,7 +34,8 @@ class SqliteDB(context: Context):SQLiteOpenHelper(context,NOMBRE_BD, null, VERSI
                 "us_correo NOT NULL," +
                 "us_distrito NOT NULL," +
                 "us_direccion NOT NULL," +
-                "tipous_id INTEGER NOT NULL," + "foreign key(tipous_id)references tipousuario(tipous_id));"
+                "tipous_id INTEGER NOT NULL," +
+                "foreign key(tipous_id)references tipousuario(tipous_id));"
         db?.execSQL(query)
 
         query = "CREATE TABLE rubrotienda(" +
@@ -66,15 +67,16 @@ class SqliteDB(context: Context):SQLiteOpenHelper(context,NOMBRE_BD, null, VERSI
 
         query = "CREATE TABLE Contactos (" +
                 "contactoId INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                "usuarioId NOT NULL," +
+                "contactoDni NOT NULL," +
+                "usuarioId INTEGER NOT NULL," +
                 "contactoNombres NOT NULL," +
                 "contactoApellidos NOT NULL," +
                 "contactoCorreo NOT NULL," +
                 "contactoDistrito NOT NULL," +
                 "contactoDireccion NOT NULL," +
                 "contactoTipous NOT NULL," +
-                "FOREIGN KEY (contacto_Id) REFERENCES Usuarios(us_id)," +
-                "FOREIGN KEY (contacto_tipous) REFERENCES tipousuario(tipous_tipo));"
+                "foreign key (usuarioId) references Usuarios(us_id)," +
+                "foreign key (contactoTipous) references tipousuario(tipous_id));"
         db?.execSQL(query)
 
     }

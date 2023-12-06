@@ -35,18 +35,19 @@
 
             <TextView
                 android:id="@+id/ctonombapellidos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                style="@style/MiFloatingActionButton"
+                android:layout_width="277dp"
+                android:layout_height="26dp"
                 android:fontFamily="@font/kanit"
                 android:text="NOMBRES Y APELLIDOS"
                 android:textColor="#343F4B"
                 android:textStyle="bold"
-                style="@style/MiFloatingActionButton"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.126"
+                app:layout_constraintHorizontal_bias="0.101"
                 app:layout_constraintStart_toEndOf="@+id/imageView6"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.158" />
 
             <RatingBar
                 android:id="@+id/rbarcontacto"
@@ -68,10 +69,12 @@
                 android:id="@+id/floatingActionButton4"
                 android:layout_width="54dp"
                 android:layout_height="55dp"
-                android:layout_marginStart="112dp"
+                android:layout_marginStart="92dp"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/black"
                 android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.12"
                 app:layout_constraintStart_toEndOf="@+id/rbarcontacto"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_delete" />
