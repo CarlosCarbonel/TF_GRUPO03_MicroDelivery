@@ -75,11 +75,11 @@
             android:id="@+id/fotousuario"
             android:layout_width="100dp"
             android:layout_height="95dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/caja_fotousuario"
             android:src="@drawable/usuario1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.767"
+            app:layout_constraintHorizontal_bias="0.784"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTituloForm" />
 
@@ -100,9 +100,9 @@
 
         <TextView
             android:id="@+id/txtmsnombapellidos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="104dp"
+            android:layout_width="167dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="88dp"
             android:fontFamily="@font/knewave"
             android:gravity="center"
             android:padding="5dp"
@@ -110,7 +110,7 @@
             android:textColor="#47525E"
             android:textSize="50px"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.908"
+            app:layout_constraintHorizontal_bias="0.909"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTituloForm" />
 
@@ -118,7 +118,7 @@
             android:id="@+id/txtmscorreo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="44dp"
             android:fontFamily="@font/kanit"
             android:gravity="center"
             android:padding="5dp"
@@ -126,7 +126,7 @@
             android:textColor="#47525E"
             android:textSize="30px"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.813"
+            app:layout_constraintHorizontal_bias="0.764"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fotousuario" />
 
@@ -134,7 +134,7 @@
             android:id="@+id/txtmscelular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="68dp"
             android:fontFamily="@font/kanit"
             android:gravity="center"
             android:padding="5dp"
@@ -142,7 +142,7 @@
             android:textColor="#47525E"
             android:textSize="30px"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.73"
+            app:layout_constraintHorizontal_bias="0.743"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fotousuario" />
 
@@ -150,7 +150,7 @@
             android:id="@+id/btnactdatos"
             android:layout_width="163dp"
             android:layout_height="50dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="92dp"
             android:backgroundTint="#47525E"
             android:fontFamily="@font/kanitb"
             android:text="Actualizar datos"
@@ -158,7 +158,7 @@
             android:textSize="24px"
             app:cornerRadius="360dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintHorizontal_bias="0.911"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fotousuario" />
 
@@ -292,15 +292,15 @@
             android:layout_width="160dp"
             android:layout_height="90dp"
             android:layout_marginTop="44dp"
-            android:paddingHorizontal="30dp"
-            android:fontFamily="@font/kanitb"
-            android:text="Contactos"
-            android:textSize="45px"
-            android:textColor="#343F4B"
             android:backgroundTint="#FFCD0F"
+            android:fontFamily="@font/kanitb"
+            android:paddingHorizontal="30dp"
+            android:text="Contactos"
+            android:textColor="#343F4B"
+            android:textSize="45px"
             app:cornerRadius="0dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.372"
+            app:layout_constraintHorizontal_bias="0.553"
             app:layout_constraintStart_toEndOf="@+id/btnbuscarepartidor"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
@@ -321,21 +321,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnbuscarepartidor" />
 
-        <Button
-            android:id="@+id/btnzonarep"
-            android:layout_width="160dp"
-            android:layout_height="90dp"
-            android:layout_marginTop="2dp"
-            android:backgroundTint="#976DD0"
-            android:fontFamily="@font/kanitb"
-            android:paddingHorizontal="30dp"
-            android:text="Zona Repartidor"
-            android:textColor="@color/white"
-            android:textSize="45px"
-            app:cornerRadius="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.384"
-            app:layout_constraintStart_toEndOf="@+id/btnprodenviados"
-            app:layout_constraintTop_toBottomOf="@+id/btncontactos" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

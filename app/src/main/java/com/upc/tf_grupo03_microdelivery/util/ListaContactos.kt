@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.upc.tf_grupo03_microdelivery.Perfil_Repartidor
@@ -22,6 +23,7 @@ class ListaContactos : AppCompatActivity(), Adaptorc.OnItemClickListener {
         setContentView(R.layout.activity_lista_contactos)
         asignarReferencias()
         mostrarContactos()
+
     }
     private fun asignarReferencias(){
         contactosDAO = ContactosDAO(this)
@@ -43,5 +45,19 @@ class ListaContactos : AppCompatActivity(), Adaptorc.OnItemClickListener {
         val listaContactos = contactosDAO.cargarContactos()
         adaptadorc?.agregarItems(listaContactos)
         Log.d("===","${listaContactos.size}")
+    }
+    override fun onEliminarClicked(contacto: Contactos, position: Int) {
+      // Eliminar el contacto de la base de datos
+      val exito= contactosDAO.eliminarContacto(contacto.cid)
+      if (exito){
+      // Actualizar la lista en el adaptador
+      adaptadorc?.let {
+          it.listaContactos.removeAt(position)
+          it.notifyItemRemoved(position)
+      }
+      Toast.makeText(this, "Contacto eliminado", Toast.LENGTH_SHORT).show()
+    } else {
+      Toast.makeText(this, "Error al eliminar contacto", Toast.LENGTH_SHORT).show()
+    }
     }
 }

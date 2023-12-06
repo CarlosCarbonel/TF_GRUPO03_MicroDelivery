@@ -119,5 +119,20 @@ class ContactosDAO (context:Context) {
         return listaContactos
     }
 
+    fun eliminarContacto(contactoId: Int): Boolean {
+        val db = sqliteDB.writableDatabase
+        val selection = "contactoId = ?"
+        val selectionArgs = arrayOf(contactoId.toString())
+        return try {
+            val deletedRows = db.delete("Contactos", selection, selectionArgs)
+            deletedRows > 0
+        } catch (e: Exception) {
+            Log.e("ContactosDAO", "Error al eliminar contacto: ${e.message}")
+            false
+        } finally {
+            db.close()
+        }
+    }
+
 
 }
