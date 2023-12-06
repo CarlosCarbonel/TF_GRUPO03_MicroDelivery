@@ -4,22 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.upc.tf_grupo03_microdelivery.Adaptor
-import com.upc.tf_grupo03_microdelivery.OnItemClickListener
 import com.upc.tf_grupo03_microdelivery.Perfil_Repartidor
 import com.upc.tf_grupo03_microdelivery.R
 import com.upc.tf_grupo03_microdelivery.dao.UsuariosDAO
 import com.upc.tf_grupo03_microdelivery.entidades.Usuarios
 
-class ListaRepartidor : AppCompatActivity(), OnItemClickListener {
+class ListaRepartidor : AppCompatActivity(), Adaptor.OnItemClickListener {
 
     private lateinit var rvUsuarios: RecyclerView
     private lateinit var usuariosDAO: UsuariosDAO
-    private var adaptador:Adaptor? = null
+    private var adaptador: Adaptor? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +25,7 @@ class ListaRepartidor : AppCompatActivity(), OnItemClickListener {
     }
     private fun asignarReferencias(){
         usuariosDAO = UsuariosDAO(this)
-        rvUsuarios=findViewById(R.id.rvProductos)
+        rvUsuarios=findViewById(R.id.rvUsuarios)
         rvUsuarios.layoutManager= LinearLayoutManager(this)
         adaptador= Adaptor(this)
         rvUsuarios.adapter=adaptador
