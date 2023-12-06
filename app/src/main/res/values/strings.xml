@@ -2,5 +2,5 @@
     <string name="app_name">TF_GRUPO03_MicroDelivery</string>
     <string name="descripcion_llamada">Hacer llamada</string>
     <string name="descripcion_mensaje">Hacer Mensaje</string>
-
+    <string name="descripción_rating">rating</string>
 </resources>

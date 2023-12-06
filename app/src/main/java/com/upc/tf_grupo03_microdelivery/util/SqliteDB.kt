@@ -64,22 +64,18 @@ class SqliteDB(context: Context):SQLiteOpenHelper(context,NOMBRE_BD, null, VERSI
                 "rubrotd_id INTEGER NOT NULL," + "foreign key(rubrotd_id) references rubrotienda(rubrotd_id));"
         db?.execSQL(query)
 
-        val createTableContactos = """
-            CREATE TABLE Contactos (
-                contactoId INTEGER PRIMARY KEY AUTOINCREMENT,
-                usuarioId INTEGER,
-                contactoNombres TEXT,
-                contactoApellidos TEXT,
-                contactoCorreo TEXT,
-                contactoDistrito TEXT,
-                contactoDireccion TEXT,
-                contactoTipous TEXT,
-                FOREIGN KEY (contacto_Id) REFERENCES Usuarios(us_id),
-                FOREIGN KEY (contacto_tipous) REFERENCES tipousuario(tipous_tipo)
-            )
-        """.trimIndent()
-
-        db?.execSQL(createTableContactos)
+        query = "CREATE TABLE Contactos (" +
+                "contactoId INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "usuarioId NOT NULL," +
+                "contactoNombres NOT NULL," +
+                "contactoApellidos NOT NULL," +
+                "contactoCorreo NOT NULL," +
+                "contactoDistrito NOT NULL," +
+                "contactoDireccion NOT NULL," +
+                "contactoTipous NOT NULL," +
+                "FOREIGN KEY (contacto_Id) REFERENCES Usuarios(us_id)," +
+                "FOREIGN KEY (contacto_tipous) REFERENCES tipousuario(tipous_tipo));"
+        db?.execSQL(query)
 
     }
 

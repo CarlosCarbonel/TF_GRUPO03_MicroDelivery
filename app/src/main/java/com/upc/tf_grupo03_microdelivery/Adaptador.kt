@@ -22,11 +22,10 @@ class Adaptor (private val listener:OnItemClickListener):RecyclerView.Adapter<Ad
 
     class MiViewHolder(var view:View, val listener: OnItemClickListener):RecyclerView.ViewHolder(view){
         private var fNombres= view.findViewById<TextView>(R.id.filanombres)
-        private var fApellidos= view.findViewById<TextView>(R.id.filaapellidos)
+
 
         fun bindView(usuario:Usuarios) {
-            fNombres.text=usuario.nombres
-            fApellidos.text=usuario.apellidos
+            fNombres.text=usuario.nombres +" "+usuario.apellidos
 
             view.setOnClickListener{
                 listener.onItemClicked(usuario)
