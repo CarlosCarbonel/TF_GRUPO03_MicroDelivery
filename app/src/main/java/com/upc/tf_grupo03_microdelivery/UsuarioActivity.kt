@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.upc.tf_grupo03_microdelivery.util.ListaContactos
 import com.upc.tf_grupo03_microdelivery.util.ListaRepartidor
-import com.upc.tf_grupo03_microdelivery.util.lista_contactos
+
 
 class UsuarioActivity : AppCompatActivity() {
 
@@ -40,7 +41,7 @@ class UsuarioActivity : AppCompatActivity() {
     private fun buscarContacto(){
         btncontactos = findViewById(R.id.btncontactos)
         btncontactos.setOnClickListener({
-            val intent = Intent(this, lista_contactos::class.java)
+            val intent = Intent(this, ListaContactos::class.java)
             startActivity(intent)
         })
     }
