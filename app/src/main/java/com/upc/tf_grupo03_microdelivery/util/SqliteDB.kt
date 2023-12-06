@@ -17,7 +17,7 @@ class SqliteDB(context: Context):SQLiteOpenHelper(context,NOMBRE_BD, null, VERSI
                 "tipous_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "tipous_tipo NOT NULL);"
         db?.execSQL(query)
-        query = "INSERT INTO tipousuario VALUES (NULL, 'VENDEDOR');"
+        query = "INSERT INTO tipousuario VALUES (NULL, 'SOLICITANTE');"
         db?.execSQL(query)
         query = "INSERT INTO tipousuario VALUES (NULL, 'REPARTIDOR');"
         db?.execSQL(query)

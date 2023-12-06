@@ -71,15 +71,16 @@
             app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+
         <ImageView
             android:id="@+id/fotousuario"
-            android:layout_width="100dp"
-            android:layout_height="95dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="139dp"
+            android:layout_height="147dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/caja_fotousuario"
             android:src="@drawable/usuario1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.784"
+            app:layout_constraintHorizontal_bias="0.886"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTituloForm" />
 
@@ -87,22 +88,21 @@
             android:id="@+id/btncamara"
             android:layout_width="38dp"
             android:layout_height="37dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="132dp"
             android:background="@android:color/transparent"
             android:contentDescription="Foto"
             android:src="@drawable/camarabtn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.864"
+            app:layout_constraintHorizontal_bias="0.892"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view2"
             tools:ignore="TouchTargetSizeCheck" />
-
 
         <TextView
             android:id="@+id/txtmsnombapellidos"
             android:layout_width="167dp"
             android:layout_height="75dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="148dp"
             android:fontFamily="@font/knewave"
             android:gravity="center"
             android:padding="5dp"
@@ -110,23 +110,23 @@
             android:textColor="#47525E"
             android:textSize="50px"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.909"
+            app:layout_constraintHorizontal_bias="0.946"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTituloForm" />
 
         <TextView
             android:id="@+id/txtmscorreo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_width="169dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="52dp"
             android:fontFamily="@font/kanit"
             android:gravity="center"
             android:padding="5dp"
             android:text="email"
             android:textColor="#47525E"
-            android:textSize="30px"
+            android:textSize="35px"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.764"
+            app:layout_constraintHorizontal_bias="0.946"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fotousuario" />
 
@@ -134,7 +134,7 @@
             android:id="@+id/txtmscelular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="72dp"
             android:fontFamily="@font/kanit"
             android:gravity="center"
             android:padding="5dp"
@@ -142,25 +142,25 @@
             android:textColor="#47525E"
             android:textSize="30px"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.743"
+            app:layout_constraintHorizontal_bias="0.773"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fotousuario" />
 
         <Button
             android:id="@+id/btnactdatos"
-            android:layout_width="163dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="92dp"
+            android:layout_width="160dp"
+            android:layout_height="90dp"
             android:backgroundTint="#47525E"
             android:fontFamily="@font/kanitb"
+            android:paddingHorizontal="30dp"
             android:text="Actualizar datos"
             android:textColor="@color/white"
-            android:textSize="24px"
-            app:cornerRadius="360dp"
+            android:textSize="42px"
+            app:cornerRadius="0dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.911"
+            app:layout_constraintHorizontal_bias="0.874"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fotousuario" />
+            app:layout_constraintTop_toBottomOf="@+id/btncontactos" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -168,7 +168,7 @@
             android:layout_height="222dp"
             android:layout_marginTop="4dp"
 
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/caja_misitioresumen"
             app:layout_constraintEnd_toStartOf="@+id/fotousuario"
             app:layout_constraintTop_toBottomOf="@+id/txtTituloForm">
@@ -300,7 +300,7 @@
             android:textSize="45px"
             app:cornerRadius="0dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.553"
+            app:layout_constraintHorizontal_bias="0.384"
             app:layout_constraintStart_toEndOf="@+id/btnbuscarepartidor"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 

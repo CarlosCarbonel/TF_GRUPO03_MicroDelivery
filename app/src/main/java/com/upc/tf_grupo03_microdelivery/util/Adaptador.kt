@@ -16,7 +16,9 @@ class Adaptor (private val listener: OnItemClickListener):RecyclerView.Adapter<A
 
 
     fun agregarItems(items:ArrayList<Usuarios>){
-        this.listaUsuarios=items
+        //this.listaUsuarios=items
+        listaUsuarios.clear()
+        listaUsuarios.addAll(items)
         notifyDataSetChanged()
     }
 

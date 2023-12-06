@@ -41,7 +41,9 @@ class ListaRepartidor : AppCompatActivity(), Adaptor.OnItemClickListener {
     }
     private fun mostrarUsuarios(){
         val listaUsuarios = usuariosDAO.cargarUsuarios()
-        adaptador?.agregarItems(listaUsuarios)
+        val usuariosFiltrados =listaUsuarios.filter {it.tipoUsuario==2}
+        adaptador?.agregarItems(ArrayList(usuariosFiltrados))
         Log.d("===","${listaUsuarios.size}")
+        Log.d("ListaRepartidor", "Usuarios filtrados: ${usuariosFiltrados.size}")
     }
 }

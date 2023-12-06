@@ -1,10 +1,18 @@
 package com.upc.tf_grupo03_microdelivery
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
+import com.upc.tf_grupo03_microdelivery.entidades.Contactos
+import com.upc.tf_grupo03_microdelivery.entidades.Usuarios
+import com.upc.tf_grupo03_microdelivery.util.Adaptor
 import com.upc.tf_grupo03_microdelivery.util.ListaContactos
 import com.upc.tf_grupo03_microdelivery.util.ListaRepartidor
 import com.upc.tf_grupo03_microdelivery.util.ProductosEnviados
@@ -19,6 +27,10 @@ class UsuarioActivity : AppCompatActivity() {
     private lateinit var txtmscelular: TextView
     private lateinit var btnactdatos: Button
     private lateinit var btnprodenviados: Button
+    companion object {
+        private const val PICK_IMAGE_REQUEST = 1
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +40,11 @@ class UsuarioActivity : AppCompatActivity() {
         buscarContacto()
         actualizarDatosUsuario()
         productosEnviados()
+        cargarfoto()
+        //val btnAbrirPerfilRepartidor = findViewById<Button>(R.id.btnprodenviados)
+        //btnAbrirPerfilRepartidor.setOnClickListener {
+        //    abrirPerfilRepartidor()
+        //}
     }
 
     private fun actualizarDatosUsuario() {
@@ -69,10 +86,46 @@ class UsuarioActivity : AppCompatActivity() {
     }
 
     private fun productosEnviados(){
-        btnprodenviados = findViewById(R.id.btnprodenviados)
+      btnprodenviados = findViewById(R.id.btnprodenviados)
         btnprodenviados.setOnClickListener({
             val intent = Intent(this, ProductosEnviados::class.java)
-            startActivity(intent)
-        })
+           startActivity(intent)
+       })
+    }
+    //private fun abrirPerfilRepartidor(){
+    //      val intent = Intent(this, Perfil_Repartidor::class.java)
+    //        val usuarioId = obtenerIdUsuarioLogueado()
+    //        intent.putExtra("EXTRA_USUARIO_ID", usuarioId)
+    //        startActivity(intent)
+    //}
+    private fun obtenerIdUsuarioLogueado(): Int {
+        val sharedPreferences = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
+        val usuarioId =
+            sharedPreferences.getInt("usuarioId", -1) // Retorna -1 si no se encuentra el ID
+
+        // Agregar un log para verificar el valor obtenido
+        Log.d("UsuarioActivity", "ID del usuario logueado: $usuarioId")
+
+        return usuarioId
+    }
+    private fun cargarfoto(){
+        val btnAbrirGaleria = findViewById<ImageButton>(R.id.btncamara)
+        btnAbrirGaleria.setOnClickListener{
+            abrirGaleria()
+        }
+    }
+
+    private fun abrirGaleria() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(intent, PICK_IMAGE_REQUEST)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
+            val imagenUri = data?.data
+            // Aquí puedes usar la URI de la imagen para mostrarla en tu aplicación
+        }
     }
 }

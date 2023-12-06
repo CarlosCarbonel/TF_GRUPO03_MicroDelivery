@@ -1,5 +1,6 @@
 package com.upc.tf_grupo03_microdelivery
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         crearUsuario()
         login()
         recuperarContraseña()
+
     }
 
     private fun asignarReferencias() {
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         btningresar.setOnClickListener({validarIngreso()})
     }
 
+
     private fun recuperarContraseña(){
         btnRecuperar = findViewById(R.id.btnrecuperarpwd)
         btnRecuperar.setOnClickListener({
@@ -54,11 +57,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun validarIngreso(){
+
         txtusu = findViewById(R.id.txtusu)
         txtpwd = findViewById(R.id.txtpwd)
 
         val user = txtusu.text.toString()
         val password = txtpwd.text.toString()
+
 
         if (validaCamposIngreso(user, password)){
 
@@ -68,6 +73,7 @@ class MainActivity : AppCompatActivity() {
 
             if (usuarioLogueado != null){
                 if (usuarioLogueado.flgencontrado){
+                    guardarIdUsuarioLogueado(usuarioLogueado.id)
                     val intent = Intent(this, UsuarioActivity::class.java)
                     intent.putExtra("p_name", usuarioLogueado.nombres + " " + usuarioLogueado.apellidos)
                     intent.putExtra("p_email", usuarioLogueado.correo)
@@ -81,6 +87,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+    private fun guardarIdUsuarioLogueado(id: Int) {
+        val sharedPreferences = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
+        sharedPreferences.edit().apply {
+            putInt("usuarioId", id)
+            apply()
+        }
     }
 
     private fun validaCamposIngreso(inusu:String, inpwd:String):Boolean{
