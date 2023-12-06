@@ -15,19 +15,36 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:id="@+id/imglogo"
+        android:layout_width="169dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logop" />
 
+    <TextView
+        android:id="@+id/txtnombrelogo"
+        android:layout_width="197dp"
+        android:layout_height="46dp"
+        android:layout_alignParentEnd="false"
+        android:layout_toEndOf="@+id/imglogo"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/knewave"
+        android:text="Micro Delivery"
+        android:textColor="#FF47525E"
+        android:textSize="70px"
+        app:layout_constraintBottom_toBottomOf="@+id/imglogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
     <View
         android:id="@+id/divider4"
         android:layout_width="125dp"
@@ -37,24 +54,24 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="98dp"
         android:layout_height="24dp"
         android:layout_marginTop="28dp"
-        android:background="#47D84C"
+        android:background="#13CE66"
         android:gravity="center"
-        android:shadowColor="#2CCA32"
+        android:shadowColor="#13CE66"
         android:text="Servicios"
-        android:textColorHighlight="#30BF36"
-        android:textColorLink="#35D83B"
+        android:fontFamily="@font/kanit"
+        android:textColor="#343F4B"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -90,7 +107,7 @@
         android:id="@+id/rvUsuarios"
         android:layout_width="409dp"
         android:layout_height="337dp"
-        android:background="#47D84C"
+        android:background="#13CE66"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,10 +127,11 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="40dp"
-        android:layout_height="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/kanit"
         android:text="200"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F4F2F2"
@@ -126,7 +144,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/kanit"
         android:text="020"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F4F2F2"
@@ -139,7 +158,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/kanit"
         android:text="030"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F4F2F2"
@@ -149,21 +169,25 @@
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="97dp"
-        android:layout_height="33dp"
+        android:layout_width="103dp"
+        android:layout_height="38dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/kanit"
         android:text="Repartidores disponibles"
         android:textColor="#F4F2F2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
+        android:layout_width="99dp"
+        android:layout_height="44dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/kanit"
         android:text="Agregado a contactos"
         android:textColor="#F4F2F2"
         app:layout_constraintStart_toEndOf="@+id/textView10"
@@ -174,7 +198,8 @@
         android:layout_width="120dp"
         android:layout_height="42dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/kanit"
         android:text="Recomendaciones brindadas"
         android:textColor="#F4F2F2"
         app:layout_constraintStart_toEndOf="@+id/textView11"

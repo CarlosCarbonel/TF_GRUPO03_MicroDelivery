@@ -14,7 +14,7 @@
         android:theme="@style/Theme.TF_GRUPO03_MicroDelivery"
         tools:targetApi="31">
         <activity
-            android:name=".lista_contactos"
+            android:name=".util.lista_contactos"
             android:exported="false" />
         <activity
             android:name=".popupllamada"
