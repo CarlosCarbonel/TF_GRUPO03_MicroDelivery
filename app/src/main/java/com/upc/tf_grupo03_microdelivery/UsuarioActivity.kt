@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.upc.tf_grupo03_microdelivery.util.ListaContactos
 import com.upc.tf_grupo03_microdelivery.util.ListaRepartidor
+import com.upc.tf_grupo03_microdelivery.util.ProductosEnviados
 
 
 class UsuarioActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class UsuarioActivity : AppCompatActivity() {
     private lateinit var txtmscorreo: TextView
     private lateinit var txtmscelular: TextView
     private lateinit var btnactdatos: Button
+    private lateinit var btnprodenviados: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,7 @@ class UsuarioActivity : AppCompatActivity() {
         buscarRepartidor()
         buscarContacto()
         actualizarDatosUsuario()
+        productosEnviados()
     }
 
     private fun actualizarDatosUsuario() {
@@ -61,6 +64,14 @@ class UsuarioActivity : AppCompatActivity() {
         btncontactos = findViewById(R.id.btncontactos)
         btncontactos.setOnClickListener({
             val intent = Intent(this, ListaContactos::class.java)
+            startActivity(intent)
+        })
+    }
+
+    private fun productosEnviados(){
+        btnprodenviados = findViewById(R.id.btnprodenviados)
+        btnprodenviados.setOnClickListener({
+            val intent = Intent(this, ProductosEnviados::class.java)
             startActivity(intent)
         })
     }

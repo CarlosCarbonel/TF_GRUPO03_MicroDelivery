@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.upc.tf_grupo03_microdelivery.dao.UsuariosDAO
 import com.upc.tf_grupo03_microdelivery.entidades.Usuarios
+import com.upc.tf_grupo03_microdelivery.util.RecuperarContrasena
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var txtpwd:EditText
     private lateinit var btncrearusuario: Button
     private lateinit var btningresar: Button
+    private lateinit var btnRecuperar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         asignarReferencias()
         crearUsuario()
         login()
+        recuperarContraseña()
     }
 
     private fun asignarReferencias() {
@@ -40,6 +43,14 @@ class MainActivity : AppCompatActivity() {
     private fun login(){
         btningresar = findViewById(R.id.btningresar)
         btningresar.setOnClickListener({validarIngreso()})
+    }
+
+    private fun recuperarContraseña(){
+        btnRecuperar = findViewById(R.id.btnrecuperarpwd)
+        btnRecuperar.setOnClickListener({
+            val intent = Intent(this, RecuperarContrasena::class.java)
+            startActivity(intent)
+        })
     }
 
     private fun validarIngreso(){
