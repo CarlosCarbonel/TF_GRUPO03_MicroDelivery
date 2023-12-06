@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".MiApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,15 +14,26 @@
         android:theme="@style/Theme.TF_GRUPO03_MicroDelivery"
         tools:targetApi="31">
         <activity
+            android:name=".util.ListaContactos"
+            android:exported="false" />
+         <activity
+            android:name=".popupllamada"
+            android:exported="false" />
+        <activity
+            android:name=".util.ProductosEnviados"
+            android:exported="false" />
+        <activity
+            android:name=".util.RecuperarContrasena"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".util.ListaRepartidor"
             android:exported="false" />
@@ -33,9 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".Perfil_Repartidor"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

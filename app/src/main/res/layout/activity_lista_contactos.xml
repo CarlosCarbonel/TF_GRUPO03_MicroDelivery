@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".util.ListaRepartidor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imglogo"
+        android:layout_width="169dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logop" />
+
+    <TextView
+        android:id="@+id/txtnombrelogo"
+        android:layout_width="197dp"
+        android:layout_height="46dp"
+        android:layout_alignParentEnd="false"
+        android:layout_toEndOf="@+id/imglogo"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/knewave"
+        android:text="Micro Delivery"
+        android:textColor="#FF47525E"
+        android:textSize="70px"
+        app:layout_constraintBottom_toBottomOf="@+id/imglogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="125dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="28dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
+
+
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="125dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="98dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="28dp"
+        android:background="#FFCD0F"
+        android:gravity="center"
+        android:shadowColor="#FFCD0F"
+        android:text="CONTACTOS"
+        android:fontFamily="@font/kanit"
+        android:textColor="#343F4B"
+        android:textColorHighlight="#FFCD0F"
+        android:textColorLink="#FFCD0F"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvContactos"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:background="#FFCD0F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/fila_repartidor" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
